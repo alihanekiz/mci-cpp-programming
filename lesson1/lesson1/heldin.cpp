@@ -17,7 +17,7 @@ void gegenstandVerkaufen(Heldin_t* heldin, int stelle) {
     if(stelle >= 0 && stelle <= 9 && heldin->inventar[stelle].isValid) {
         heldin->gold += heldin->inventar[stelle].wert;
         heldin->inventar[stelle].isValid = false;
-        std::cout << "Gegenstand: " << heldin->inventar[stelle].bezeichnung << "wurde verkauft." << std::endl;
+        std::cout << "Gegenstand: " << heldin->inventar[stelle].bezeichnung << " wurde verkauft." << std::endl;
     } else std::cout << "Es befindet sich kein Gegenstand im Inventarplatz." << std::endl;
 }
 
