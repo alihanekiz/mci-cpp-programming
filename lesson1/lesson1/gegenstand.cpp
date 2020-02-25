@@ -8,12 +8,38 @@
 
 #include "gegenstand.hpp"
 
-void initGegenstand(Gegenstand_t* gegenstand, char* bezeichnung, int wert) {
-    gegenstand->bezeichnung = bezeichnung;
-    gegenstand->wert = wert;
-    gegenstand->isValid = true;
+void Gegenstand::initGegenstand(char* bezeichnung, int wert) {
+    this->bezeichnung = bezeichnung;
+    this->wert = wert;
+    this->isValid = true;
 }
 
-void initGegenstand(Gegenstand_t* gegenstand) {
-    gegenstand->isValid = false;
+void Gegenstand::initGegenstand() {
+    this->isValid = false;
+}
+
+void Gegenstand::setWert(int wert) {
+    if(wert > 0) {
+        this->wert = wert;
+    }
+}
+
+void Gegenstand::setBezeichnung(char *bezeichnung) {
+    this->bezeichnung = bezeichnung;
+}
+
+void Gegenstand::setIsValid(bool isValid) {
+    this->isValid = isValid;
+}
+
+int Gegenstand::getWert() {
+    return this->wert;
+}
+
+char* Gegenstand::getBezeichnung() {
+    return this->bezeichnung;
+}
+
+bool Gegenstand::getIsValid() {
+    return this->isValid;
 }

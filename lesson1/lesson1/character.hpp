@@ -11,16 +11,27 @@
 #define character_hpp
 
 #include "gegenstand.hpp"
-struct Heldin_t;
+class Heldin;
 
-struct Character_t {
+class Character {
+private:
     char* name;
     int lebenspunkte;
     int gold;
-    Gegenstand_t inventar[10];
+    Gegenstand inventar[10];
+public:
+    void angreifen(Heldin* heldin);
+    int addInventarGegenstand(const Gegenstand& gegenstand);
+    Gegenstand removeGegenstandAusInventar(int slot);
+    int getRandomInventarSlot();
+    int getFreeInventarIndex();
+    void initCharacter(char* name, int lebenspunkte, int gold);
+    void setName(char* name);
+    void setLebenspunkte(int lebenspunkte);
+    void setGold(int gold);
+    char* getName();
+    int getLebenspunkte();
+    int getGold();
 };
-
-void angreifen(Character_t* character, Heldin_t* heldin);
-void initCharacter(Character_t* character, char* name, int lebenspunkte, int gold);
 
 #endif /* character_hpp */

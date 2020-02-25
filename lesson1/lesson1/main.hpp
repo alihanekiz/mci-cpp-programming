@@ -13,7 +13,7 @@
 #include "character.hpp"
 #include "heldin.hpp"
 
-void makeWar(Heldin_t* heldin, Character_t* character);
-void playEndScene(Heldin_t* heldin);
+void makeWar(Heldin* heldin, Character* character);
+void playEndScene(Heldin* heldin);
 
 #endif /* main_h */

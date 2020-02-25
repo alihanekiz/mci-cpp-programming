@@ -13,43 +13,60 @@ using namespace std;
 
 int main() {
     
-    Heldin_t heldin;
-    Character_t character1;
-    Character_t character2;
-    initHeldin(&heldin, (char *) "Futura", 200, 1000);
-    initCharacter(&character1, (char *) "Alihan", 50, 200);
-    initCharacter(&character2, (char *) "Max", 100, 200);
+    Heldin heldin;
+    Character character1;
+    Character character2;
+    Gegenstand g1;
+    Gegenstand g2;
+    g1.initGegenstand((char *) "Axt", 100);
+    g2.initGegenstand((char *) "Schild", 200);
+    heldin.initHeldin((char *) "Futura", 200, 1000);
+    character1.initCharacter((char *) "Alihan", 50, 200);
+    character1.addInventarGegenstand(g1);
+    character2.initCharacter((char *) "Max", 100, 200);
+    character2.addInventarGegenstand(g2);
     
     makeWar(&heldin, &character1);
     makeWar(&heldin, &character2);
     
-    playEndScene(&heldin);
+//    playEndScene(&heldin);
+    
     
     return 0;
 }
 
-void makeWar(Heldin_t* heldin, Character_t* character) {
-    while(heldin->lebenspunkte > 0 && character->lebenspunkte > 0) {
-        angreifen(heldin, character);
-        cout << heldin->name << " trifft " << character->name << " fuer 20 Lebenspunkte" << endl;
-        if(character->lebenspunkte > 0) {
-            angreifen(character, heldin);
-            cout << character->name << " trifft " << heldin->name << " fuer 5 Lebenspunkte" << endl;
+void makeWar(Heldin* heldin, Character* character) {
+    while(heldin->getLebenspunkte() > 0 && character->getLebenspunkte() > 0) {
+        heldin->angreifen(character);
+        cout << heldin->getName() << " trifft " << character->getName() << " fuer 20 Lebenspunkte" << endl;
+        if(character->getLebenspunkte() > 0) {
+            character->angreifen(heldin);
+            cout << character->getName() << " trifft " << heldin->getName() << " fuer 5 Lebenspunkte" << endl;
         }
     }
-    if (heldin->lebenspunkte <= 0) {
-        cout << heldin->name << " fiel in Ohnmacht!" << endl;
-    } else cout << character->name << " fiel in Ohnmacht!" << endl;
+    if (heldin->getLebenspunkte() <= 0) {
+        cout << heldin->getName() << " fiel in Ohnmacht!" << endl;
+    } else {
+        cout << character->getName() << " fiel in Ohnmacht!" << endl;
+        cout << heldin->getName() << " hat noch " << heldin->getLebenspunkte() << " Lebenspunkte." << endl;
+        int slot = character->getRandomInventarSlot();
+        if (slot != -1) {
+            int i = heldin->addInventarGegenstand(character->removeGegenstandAusInventar(slot));
+            cout << "Gegenstand wurde hinzugefügt: " << heldin->getGegenstand(i).getBezeichnung() << endl;
+        }
+    }
 }
 
-void playEndScene(Heldin_t* heldin) {
-    Gegenstand_t gegenstand1;
-    Gegenstand_t gegenstand2;
-    initGegenstand(&gegenstand1, (char *) "Zaubertrank", 200);
-    initGegenstand(&gegenstand2, (char *) "Axt", 50);
-    cout << heldin->name << " hat noch " << heldin->lebenspunkte << " Lebenspunkte." << endl;
-    heldin->inventar[0] = gegenstand1;
-    heldin->inventar[1] = gegenstand2;
-    gegenstandVerkaufen(heldin, 0);
-    cout << heldin->name << " besitzt nun " << heldin->gold << " Gold." << endl;
+void playEndScene(Heldin* heldin) {
+    Gegenstand gegenstand1;
+    Gegenstand gegenstand2;
+    gegenstand1.initGegenstand((char *) "Zaubertrank", 200);
+    gegenstand2.initGegenstand((char *) "Axt", 50);
+    cout << heldin->getName() << " hat noch " << heldin->getLebenspunkte() << " Lebenspunkte." << endl;
+    
+    heldin->addInventarGegenstand(gegenstand1);
+    heldin->addInventarGegenstand(gegenstand2);
+    
+    heldin->gegenstandVerkaufen(0);
+    cout << heldin->getName() << " besitzt nun " << heldin->getGold() << " Gold." << endl;
 }

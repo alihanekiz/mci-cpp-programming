@@ -9,12 +9,20 @@
 #ifndef gegenstand_hpp
 #define gegenstand_hpp
 
-struct Gegenstand_t {
+class Gegenstand {
+private:
     char* bezeichnung;
     int wert;
     bool isValid;
+public:
+    void initGegenstand();
+    void initGegenstand(char* bezeichnung, int wert);
+    void setIsValid(bool isValid);
+    void setBezeichnung(char* bezeichnung);
+    void setWert(int wert);
+    int getWert();
+    char* getBezeichnung();
+    bool getIsValid();
 };
-
-void initGegenstand(Gegenstand_t* gegenstand, char* bezeichnung, int wert);
 
 #endif /* gegenstand_hpp */
