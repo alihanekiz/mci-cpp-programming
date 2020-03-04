@@ -9,33 +9,20 @@
 #ifndef heldin_hpp
 #define heldin_hpp
 
-struct Character_t;
+#include <iostream>
 
-class Heldin {
+class Heldin : public Character {
 private:
-    char* name;
-    int lebenspunkte;
-    int gold;
-    Gegenstand inventar[10];
     Gegenstand ausruestung[2];
     
 public:
-    void angreifen(Character* gegner);
-    int addInventarGegenstand(const Gegenstand& gegenstand);
-    int getFreeInventarIndex();
-    Gegenstand getGegenstand(int index);
+    Heldin(std::string name, int lebenspunkte, int gold);
     int addAusruestung(const Gegenstand& gegenstand);
     Gegenstand removeGegenstandVonAusruestung(int slot);
     int getFreeAusruestungIndex();
-    Gegenstand removeGegenstandAusInventar(int slot);
     void gegenstandVerkaufen(int stelle);
-    void initHeldin(char* name, int lebenspunkte, int gold);
-    void setName(char* name);
-    void setLebenspunkte(int lebenspunkte);
-    void setGold(int gold);
-    int getGold();
-    int getLebenspunkte();
-    char* getName();
+    std::string getType() override;
+    int getDamage() override;
 };
 
 #endif /* heldin_hpp */

@@ -10,8 +10,33 @@
 #include "heldin.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <string>
 
 Gegenstand defgeg;
+
+Character::Character(std::string name, int lebenspunkte, int gold) {
+    this->setName(name);
+    this->setLebenspunkte(lebenspunkte);
+    this->setGold(gold);
+    for(int i=0; i<10; ++i) {
+        this->inventar[i].setIsValid(false);
+    }
+}
+
+std::ostream& operator<<(std::ostream& out, const Character& c) {
+    out << "Name: " << c.name;
+    return out;
+}
+
+
+void Character::angreifen(Character *character) {
+    int damage = 2 + this->getDamage() * 0.1;
+    character->setLebenspunkte(character->getLebenspunkte() - damage);
+}
+
+int Character::getDamage() {
+    return 2;
+}
 
 Gegenstand Character::removeGegenstandAusInventar(int slot) {
     if (slot < 0 || slot > 9) return defgeg;
@@ -34,24 +59,11 @@ int Character::getRandomInventarSlot() {
     return freeSlots[(rand() % index)];
 }
 
-void Character::angreifen(Heldin* heldin) {
-    heldin->setLebenspunkte(heldin->getLebenspunkte()-5);
-}
-
-void Character::initCharacter(char* name, int lebenspunkte, int gold) {
-    this->name = name;
-    this->lebenspunkte = lebenspunkte;
-    this->gold = gold;
-    for(int i=0; i<10; ++i) {
-        this->inventar[i].setIsValid(false);
-    }
-}
-
 void Character::setGold(int gold) {
     this->gold = gold;
 }
 
-void Character::setName(char *name) {
+void Character::setName(std::string name) {
     this->name = name;
 }
 
@@ -69,7 +81,7 @@ int Character::getLebenspunkte() {
     return this->lebenspunkte;
 }
 
-char* Character::getName() {
+std::string Character::getName() {
     return this->name;
 }
 
@@ -90,4 +102,13 @@ int Character::addInventarGegenstand(const Gegenstand& gegenstand) {
     }
     std::cout << "Kein Platz mehr vorhanden!" << std::endl;
     return index;
+}
+
+Gegenstand Character::getGegenstand(int index) {
+    if (index < 0 || index > 9) return defgeg;
+    return this->inventar[index];
+}
+
+std::string Character::getType() {
+    return "Character";
 }

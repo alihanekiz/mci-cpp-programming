@@ -11,27 +11,33 @@
 #define character_hpp
 
 #include "gegenstand.hpp"
+#include <string>
+
 class Heldin;
 
 class Character {
 private:
-    char* name;
+    std::string name;
     int lebenspunkte;
     int gold;
     Gegenstand inventar[10];
 public:
-    void angreifen(Heldin* heldin);
+    Character(std::string name, int lebenspunkte, int gold);
+    void angreifen(Character* character);
+    virtual int getDamage();
+    virtual std::string getType();
     int addInventarGegenstand(const Gegenstand& gegenstand);
     Gegenstand removeGegenstandAusInventar(int slot);
+    Gegenstand getGegenstand(int index);
     int getRandomInventarSlot();
     int getFreeInventarIndex();
-    void initCharacter(char* name, int lebenspunkte, int gold);
-    void setName(char* name);
+    void setName(std::string name);
     void setLebenspunkte(int lebenspunkte);
     void setGold(int gold);
-    char* getName();
+    std::string getName();
     int getLebenspunkte();
     int getGold();
+    friend std::ostream& operator<<(std::ostream& out, const Character& c);
 };
 
 #endif /* character_hpp */

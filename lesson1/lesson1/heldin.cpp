@@ -8,11 +8,15 @@
 
 #include <iostream>
 #include "main.hpp"
+#include <string>
 
 Gegenstand defaultgeg;
 
-void Heldin::angreifen(Character* gegner) {
-    gegner->setLebenspunkte(gegner->getLebenspunkte()-20);
+Heldin::Heldin(std::string name, int lebenspunkte, int gold) : Character(std::string(name), int(lebenspunkte), int(gold)) {
+    
+    for(int i=0; i<2; ++i) {
+        this->ausruestung[i].setIsValid(false);
+    }
 }
 
 Gegenstand Heldin::removeGegenstandVonAusruestung(int slot) {
@@ -21,55 +25,12 @@ Gegenstand Heldin::removeGegenstandVonAusruestung(int slot) {
     return this->ausruestung[slot];
 }
 
-Gegenstand Heldin::removeGegenstandAusInventar(int slot) {
-    if (slot < 0 || slot > 9) return defaultgeg;
-    this->inventar[slot].setIsValid(false);
-    return this->inventar[slot];
-}
-
-void Heldin::gegenstandVerkaufen(int stelle) {
-    if(stelle >= 0 && stelle <= 9 && this->inventar[stelle].getIsValid()) {
-        this->setGold(this->getGold() + this->inventar[stelle].getWert()); 
-        this->inventar[stelle].setIsValid(false);
-        std::cout << "Gegenstand: " << this->inventar[stelle].getBezeichnung() << " wurde verkauft." << std::endl;
-    } else std::cout << "Es befindet sich kein Gegenstand im Inventarplatz." << std::endl;
-}
-
-void Heldin::initHeldin(char* name, int lebenspunkte, int gold) {
-    this->name = name;
-    this->lebenspunkte = lebenspunkte;
-    this->gold = gold;
-    for(int i=0; i<10; ++i) {
-        this->inventar[i].setIsValid(false);
-    }
-    for(int i=0; i<2; ++i) {
-        this->ausruestung[i].setIsValid(false);
-    }
-}
-
 int Heldin::addAusruestung(const Gegenstand &gegenstand) {
     const int index = this->getFreeAusruestungIndex();
     if(index != -1) this->ausruestung[index] = gegenstand;
     return index;
 }
 
-int Heldin::addInventarGegenstand(const Gegenstand &gegenstand) {
-    const int index = this->getFreeInventarIndex();
-    if (index != -1) {
-        this->inventar[index] = gegenstand;
-        this->inventar[index].setIsValid(true);
-    }
-    return index;
-}
-
-int Heldin::getFreeInventarIndex() {
-    for(int i=0; i<10; ++i) {
-        if(!this->inventar[i].getIsValid()) {
-            return i;
-        }
-    }
-    return -1;
-}
 
 int Heldin::getFreeAusruestungIndex() {
     for(int i=0; i<2; ++i) {
@@ -80,33 +41,18 @@ int Heldin::getFreeAusruestungIndex() {
     return -1;
 }
 
-void Heldin::setName(char *name) {
-    this->name = name;
+void Heldin::gegenstandVerkaufen(int stelle) {
+    if(stelle >= 0 && stelle <= 9 && this->getGegenstand(stelle).getIsValid()) {
+        this->setGold(this->getGold() + this->getGegenstand(stelle).getWert());
+        this->getGegenstand(stelle).setIsValid(false);
+        std::cout << "Gegenstand: " << this->getGegenstand(stelle).getBezeichnung() << " wurde verkauft." << std::endl;
+    } else std::cout << "Es befindet sich kein Gegenstand im Inventarplatz." << std::endl;
 }
 
-void Heldin::setLebenspunkte(int lebenspunkte) {
-    if(lebenspunkte < 0) {
-        this->lebenspunkte = 0;
-    } else this->lebenspunkte = lebenspunkte;
+std::string Heldin::getType() {
+    return "Heldin";
 }
 
-void Heldin::setGold(int gold) {
-    this->gold = gold;
-}
-
-int Heldin::getGold() {
-    return this->gold;
-}
-
-int Heldin::getLebenspunkte() {
-    return this->lebenspunkte;
-}
-
-char* Heldin::getName() {
-    return this->name;
-}
-
-Gegenstand Heldin::getGegenstand(int index) {
-    if (index < 0 || index > 9) return defaultgeg;
-    return this->inventar[index];
+int Heldin::getDamage() {
+    return 20;
 }

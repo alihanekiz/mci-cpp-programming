@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A232DEEE23FED46300B393F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A232DEED23FED46300B393F0 /* main.cpp */; };
-		A232DEF623FED4D000B393F0 /* gegenstand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A232DEF423FED4D000B393F0 /* gegenstand.cpp */; };
-		A232DEF923FED65800B393F0 /* heldin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A232DEF723FED65800B393F0 /* heldin.cpp */; };
-		A232DEFC23FED78E00B393F0 /* character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A232DEFA23FED78E00B393F0 /* character.cpp */; };
-		A2BCE156240EAC9D00F8215E /* npc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2BCE154240EAC9D00F8215E /* npc.cpp */; };
-		A2BCE159240EB90500F8215E /* ritter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2BCE157240EB90500F8215E /* ritter.cpp */; };
-		A2BCE15C240EB91200F8215E /* zauberer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2BCE15A240EB91200F8215E /* zauberer.cpp */; };
+		A2271E33240E449300C633DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2271E32240E449300C633DD /* main.cpp */; };
+		A2271E3B240E44D400C633DD /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2271E39240E44D400C633DD /* Shape.cpp */; };
+		A2271E3E240E44ED00C633DD /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2271E3C240E44ED00C633DD /* Circle.cpp */; };
+		A2271E41240E44FA00C633DD /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2271E3F240E44FA00C633DD /* Rectangle.cpp */; };
+		A2271E44240E452C00C633DD /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2271E42240E452C00C633DD /* Position.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A232DEE823FED46300B393F0 /* CopyFiles */ = {
+		A2271E2D240E449300C633DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -29,25 +27,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A232DEEA23FED46300B393F0 /* lesson1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lesson1; sourceTree = BUILT_PRODUCTS_DIR; };
-		A232DEED23FED46300B393F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A232DEF423FED4D000B393F0 /* gegenstand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gegenstand.cpp; sourceTree = "<group>"; };
-		A232DEF523FED4D000B393F0 /* gegenstand.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gegenstand.hpp; sourceTree = "<group>"; };
-		A232DEF723FED65800B393F0 /* heldin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = heldin.cpp; sourceTree = "<group>"; };
-		A232DEF823FED65800B393F0 /* heldin.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = heldin.hpp; sourceTree = "<group>"; };
-		A232DEFA23FED78E00B393F0 /* character.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = character.cpp; sourceTree = "<group>"; };
-		A232DEFB23FED78E00B393F0 /* character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = character.hpp; sourceTree = "<group>"; };
-		A232DEFD23FEE33400B393F0 /* main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = main.hpp; sourceTree = "<group>"; };
-		A2BCE154240EAC9D00F8215E /* npc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = npc.cpp; sourceTree = "<group>"; };
-		A2BCE155240EAC9D00F8215E /* npc.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = npc.hpp; sourceTree = "<group>"; };
-		A2BCE157240EB90500F8215E /* ritter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ritter.cpp; sourceTree = "<group>"; };
-		A2BCE158240EB90500F8215E /* ritter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ritter.hpp; sourceTree = "<group>"; };
-		A2BCE15A240EB91200F8215E /* zauberer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = zauberer.cpp; sourceTree = "<group>"; };
-		A2BCE15B240EB91200F8215E /* zauberer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = zauberer.hpp; sourceTree = "<group>"; };
+		A2271E2F240E449300C633DD /* Polymorphism */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Polymorphism; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2271E32240E449300C633DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A2271E39240E44D400C633DD /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		A2271E3A240E44D400C633DD /* Shape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shape.hpp; sourceTree = "<group>"; };
+		A2271E3C240E44ED00C633DD /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
+		A2271E3D240E44ED00C633DD /* Circle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Circle.hpp; sourceTree = "<group>"; };
+		A2271E3F240E44FA00C633DD /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		A2271E40240E44FA00C633DD /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
+		A2271E42240E452C00C633DD /* Position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
+		A2271E43240E452C00C633DD /* Position.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Position.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A232DEE723FED46300B393F0 /* Frameworks */ = {
+		A2271E2C240E449300C633DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,78 +50,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A232DEE123FED46300B393F0 = {
+		A2271E26240E449300C633DD = {
 			isa = PBXGroup;
 			children = (
-				A232DEEC23FED46300B393F0 /* lesson1 */,
-				A232DEEB23FED46300B393F0 /* Products */,
+				A2271E31240E449300C633DD /* Polymorphism */,
+				A2271E30240E449300C633DD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A232DEEB23FED46300B393F0 /* Products */ = {
+		A2271E30240E449300C633DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A232DEEA23FED46300B393F0 /* lesson1 */,
+				A2271E2F240E449300C633DD /* Polymorphism */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A232DEEC23FED46300B393F0 /* lesson1 */ = {
+		A2271E31240E449300C633DD /* Polymorphism */ = {
 			isa = PBXGroup;
 			children = (
-				A232DEED23FED46300B393F0 /* main.cpp */,
-				A232DEF423FED4D000B393F0 /* gegenstand.cpp */,
-				A232DEF523FED4D000B393F0 /* gegenstand.hpp */,
-				A232DEF723FED65800B393F0 /* heldin.cpp */,
-				A232DEF823FED65800B393F0 /* heldin.hpp */,
-				A232DEFA23FED78E00B393F0 /* character.cpp */,
-				A232DEFB23FED78E00B393F0 /* character.hpp */,
-				A232DEFD23FEE33400B393F0 /* main.hpp */,
-				A2BCE154240EAC9D00F8215E /* npc.cpp */,
-				A2BCE155240EAC9D00F8215E /* npc.hpp */,
-				A2BCE157240EB90500F8215E /* ritter.cpp */,
-				A2BCE158240EB90500F8215E /* ritter.hpp */,
-				A2BCE15A240EB91200F8215E /* zauberer.cpp */,
-				A2BCE15B240EB91200F8215E /* zauberer.hpp */,
+				A2271E32240E449300C633DD /* main.cpp */,
+				A2271E39240E44D400C633DD /* Shape.cpp */,
+				A2271E3A240E44D400C633DD /* Shape.hpp */,
+				A2271E3C240E44ED00C633DD /* Circle.cpp */,
+				A2271E3D240E44ED00C633DD /* Circle.hpp */,
+				A2271E3F240E44FA00C633DD /* Rectangle.cpp */,
+				A2271E40240E44FA00C633DD /* Rectangle.hpp */,
+				A2271E42240E452C00C633DD /* Position.cpp */,
+				A2271E43240E452C00C633DD /* Position.hpp */,
 			);
-			path = lesson1;
+			path = Polymorphism;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A232DEE923FED46300B393F0 /* lesson1 */ = {
+		A2271E2E240E449300C633DD /* Polymorphism */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A232DEF123FED46300B393F0 /* Build configuration list for PBXNativeTarget "lesson1" */;
+			buildConfigurationList = A2271E36240E449300C633DD /* Build configuration list for PBXNativeTarget "Polymorphism" */;
 			buildPhases = (
-				A232DEE623FED46300B393F0 /* Sources */,
-				A232DEE723FED46300B393F0 /* Frameworks */,
-				A232DEE823FED46300B393F0 /* CopyFiles */,
+				A2271E2B240E449300C633DD /* Sources */,
+				A2271E2C240E449300C633DD /* Frameworks */,
+				A2271E2D240E449300C633DD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = lesson1;
-			productName = lesson1;
-			productReference = A232DEEA23FED46300B393F0 /* lesson1 */;
+			name = Polymorphism;
+			productName = Polymorphism;
+			productReference = A2271E2F240E449300C633DD /* Polymorphism */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A232DEE223FED46300B393F0 /* Project object */ = {
+		A2271E27240E449300C633DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Alihan  Ekiz";
 				TargetAttributes = {
-					A232DEE923FED46300B393F0 = {
+					A2271E2E240E449300C633DD = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = A232DEE523FED46300B393F0 /* Build configuration list for PBXProject "lesson1" */;
+			buildConfigurationList = A2271E2A240E449300C633DD /* Build configuration list for PBXProject "Polymorphism" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,35 +124,33 @@
 				en,
 				Base,
 			);
-			mainGroup = A232DEE123FED46300B393F0;
-			productRefGroup = A232DEEB23FED46300B393F0 /* Products */;
+			mainGroup = A2271E26240E449300C633DD;
+			productRefGroup = A2271E30240E449300C633DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A232DEE923FED46300B393F0 /* lesson1 */,
+				A2271E2E240E449300C633DD /* Polymorphism */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A232DEE623FED46300B393F0 /* Sources */ = {
+		A2271E2B240E449300C633DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A232DEEE23FED46300B393F0 /* main.cpp in Sources */,
-				A232DEF923FED65800B393F0 /* heldin.cpp in Sources */,
-				A2BCE156240EAC9D00F8215E /* npc.cpp in Sources */,
-				A2BCE159240EB90500F8215E /* ritter.cpp in Sources */,
-				A2BCE15C240EB91200F8215E /* zauberer.cpp in Sources */,
-				A232DEF623FED4D000B393F0 /* gegenstand.cpp in Sources */,
-				A232DEFC23FED78E00B393F0 /* character.cpp in Sources */,
+				A2271E33240E449300C633DD /* main.cpp in Sources */,
+				A2271E3E240E44ED00C633DD /* Circle.cpp in Sources */,
+				A2271E3B240E44D400C633DD /* Shape.cpp in Sources */,
+				A2271E41240E44FA00C633DD /* Rectangle.cpp in Sources */,
+				A2271E44240E452C00C633DD /* Position.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A232DEEF23FED46300B393F0 /* Debug */ = {
+		A2271E34240E449300C633DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		A232DEF023FED46300B393F0 /* Release */ = {
+		A2271E35240E449300C633DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +259,7 @@
 			};
 			name = Release;
 		};
-		A232DEF223FED46300B393F0 /* Debug */ = {
+		A2271E37240E449300C633DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -281,7 +267,7 @@
 			};
 			name = Debug;
 		};
-		A232DEF323FED46300B393F0 /* Release */ = {
+		A2271E38240E449300C633DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -292,25 +278,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A232DEE523FED46300B393F0 /* Build configuration list for PBXProject "lesson1" */ = {
+		A2271E2A240E449300C633DD /* Build configuration list for PBXProject "Polymorphism" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A232DEEF23FED46300B393F0 /* Debug */,
-				A232DEF023FED46300B393F0 /* Release */,
+				A2271E34240E449300C633DD /* Debug */,
+				A2271E35240E449300C633DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A232DEF123FED46300B393F0 /* Build configuration list for PBXNativeTarget "lesson1" */ = {
+		A2271E36240E449300C633DD /* Build configuration list for PBXNativeTarget "Polymorphism" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A232DEF223FED46300B393F0 /* Debug */,
-				A232DEF323FED46300B393F0 /* Release */,
+				A2271E37240E449300C633DD /* Debug */,
+				A2271E38240E449300C633DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A232DEE223FED46300B393F0 /* Project object */;
+	rootObject = A2271E27240E449300C633DD /* Project object */;
 }

@@ -7,15 +7,16 @@
 //
 
 #include "gegenstand.hpp"
+#include <string>
 
-void Gegenstand::initGegenstand(char* bezeichnung, int wert) {
-    this->bezeichnung = bezeichnung;
-    this->wert = wert;
-    this->isValid = true;
+Gegenstand::Gegenstand() {
+    this->setIsValid(false);
 }
 
-void Gegenstand::initGegenstand() {
-    this->isValid = false;
+Gegenstand::Gegenstand(std::string bezeichnung, int wert) {
+    this->setBezeichnung(bezeichnung);
+    this->setWert(wert);
+    this->setIsValid(true);
 }
 
 void Gegenstand::setWert(int wert) {
@@ -24,7 +25,7 @@ void Gegenstand::setWert(int wert) {
     }
 }
 
-void Gegenstand::setBezeichnung(char *bezeichnung) {
+void Gegenstand::setBezeichnung(std::string bezeichnung) {
     this->bezeichnung = bezeichnung;
 }
 
@@ -36,7 +37,7 @@ int Gegenstand::getWert() {
     return this->wert;
 }
 
-char* Gegenstand::getBezeichnung() {
+std::string Gegenstand::getBezeichnung() {
     return this->bezeichnung;
 }
 

@@ -8,20 +8,22 @@
 
 #ifndef gegenstand_hpp
 #define gegenstand_hpp
+#include <string>
+#include <iostream>
 
 class Gegenstand {
 private:
-    char* bezeichnung;
+    std::string bezeichnung;
     int wert;
     bool isValid;
 public:
-    void initGegenstand();
-    void initGegenstand(char* bezeichnung, int wert);
+    Gegenstand();
+    Gegenstand(std::string bezeichnung, int wert);
     void setIsValid(bool isValid);
-    void setBezeichnung(char* bezeichnung);
+    void setBezeichnung(std::string bezeichnung);
     void setWert(int wert);
     int getWert();
-    char* getBezeichnung();
+    std::string getBezeichnung();
     bool getIsValid();
 };
 

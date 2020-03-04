@@ -13,18 +13,14 @@ using namespace std;
 
 int main() {
     
-    Heldin heldin;
-    Character character1;
-    Character character2;
-    Gegenstand g1;
-    Gegenstand g2;
-    g1.initGegenstand((char *) "Axt", 100);
-    g2.initGegenstand((char *) "Schild", 200);
-    heldin.initHeldin((char *) "Futura", 200, 1000);
-    character1.initCharacter((char *) "Alihan", 50, 200);
+    Heldin heldin((char *) "Futura", 200, 1000);
+    Character character1((char *) "Alihan", 50, 200);
+    Character character2((char *) "Max", 100, 200);
+    Gegenstand g1((char *) "Axt", 100);
+    Gegenstand g2((char *) "Schild", 200);
     character1.addInventarGegenstand(g1);
-    character2.initCharacter((char *) "Max", 100, 200);
     character2.addInventarGegenstand(g2);
+
     
     makeWar(&heldin, &character1);
     makeWar(&heldin, &character2);
@@ -36,7 +32,7 @@ int main() {
 }
 
 void makeWar(Heldin* heldin, Character* character) {
-    while(heldin->getLebenspunkte() > 0 && character->getLebenspunkte() > 0) {
+    while(heldin->getGold() > 0 && character->getLebenspunkte() > 0) {
         heldin->angreifen(character);
         cout << heldin->getName() << " trifft " << character->getName() << " fuer 20 Lebenspunkte" << endl;
         if(character->getLebenspunkte() > 0) {
@@ -58,10 +54,8 @@ void makeWar(Heldin* heldin, Character* character) {
 }
 
 void playEndScene(Heldin* heldin) {
-    Gegenstand gegenstand1;
-    Gegenstand gegenstand2;
-    gegenstand1.initGegenstand((char *) "Zaubertrank", 200);
-    gegenstand2.initGegenstand((char *) "Axt", 50);
+    Gegenstand gegenstand1((char *) "Zaubertrank", 200);
+    Gegenstand gegenstand2((char *) "Axt", 50);
     cout << heldin->getName() << " hat noch " << heldin->getLebenspunkte() << " Lebenspunkte." << endl;
     
     heldin->addInventarGegenstand(gegenstand1);
