@@ -99,8 +99,7 @@ int Character::addInventarGegenstand(const Gegenstand& gegenstand) {
     if (index != -1) {
         this->inventar[index] = gegenstand;
         this->inventar[index].setIsValid(true);
-    }
-    std::cout << "Kein Platz mehr vorhanden!" << std::endl;
+    } else std::cout << "Kein Platz mehr vorhanden!" << std::endl;
     return index;
 }
 
